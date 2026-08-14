@@ -407,13 +407,22 @@ h3 {
   font-size: 1.03rem;
 }
 
-.project-video-section {
-  color: #dbe7f0;
-  background: var(--navy-deep);
+.section.project-video-section {
+  padding: 56px 0 32px;
+}
+
+.project-video-section + .overview-section {
+  padding-top: 64px;
 }
 
 .project-video-section .section-heading {
-  margin-bottom: 32px;
+  width: min(100%, 1040px);
+  margin: 0 auto 24px;
+}
+
+.project-video-section .section-heading h2 {
+  margin-bottom: 12px;
+  font-size: 2.25rem;
 }
 
 .project-video-frame {
@@ -422,9 +431,9 @@ h3 {
   margin-inline: auto;
   overflow: hidden;
   background: #000000;
-  border: 1px solid #315066;
+  border: 1px solid var(--line);
   border-radius: 6px;
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow);
 }
 
 .project-video-frame iframe {
@@ -1235,6 +1244,18 @@ h3 {
 
   .section {
     padding-block: 60px;
+  }
+
+  .section.project-video-section {
+    padding: 40px 0 24px;
+  }
+
+  .project-video-section + .overview-section {
+    padding-top: 44px;
+  }
+
+  .project-video-section .section-heading h2 {
+    font-size: 1.8rem;
   }
 
   .section-heading {
