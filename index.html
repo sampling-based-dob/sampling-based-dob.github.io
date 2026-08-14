@@ -22,10 +22,6 @@
 
   <header class="site-header" id="top">
     <nav class="site-nav" aria-label="Primary navigation">
-      <a class="wordmark" href="#top" aria-label="MDOB home">
-        <span class="wordmark-mark">M</span>
-        <span>MDOB</span>
-      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
         <i data-lucide="menu" aria-hidden="true"></i>
       </button>
@@ -33,7 +29,6 @@
         <a href="#overview">Overview</a>
         <a href="#method">Method</a>
         <a href="#experiments">Experiments</a>
-        <a href="#results">Results</a>
         <a class="nav-code" href="https://github.com/zhutianqi2006/2026_modern_dob" target="_blank" rel="noreferrer">
           <i data-lucide="github" aria-hidden="true"></i>
           <span>Code</span>
@@ -49,8 +44,7 @@
       </video>
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="hero-content shell">
-        <p class="hero-kicker">Modern Disturbance Observers</p>
-        <h1 id="hero-title">MDOB</h1>
+        <h1 id="hero-title"><span class="hero-acronym">M</span>odern <span class="hero-acronym">D</span>isturbance <span class="hero-acronym">Ob</span>servers</h1>
         <p class="hero-subtitle">Online Compensation of Sim-to-Real Mismatch from Traditional Models to World Models</p>
 
         <div class="authors" aria-label="Authors">
@@ -96,10 +90,6 @@
         <div class="signal-item">
           <i data-lucide="refresh-cw" aria-hidden="true"></i>
           <span>online correction without retraining</span>
-        </div>
-        <div class="signal-item">
-          <strong>5</strong>
-          <span>simulation and hardware tasks</span>
         </div>
       </div>
     </section>
@@ -187,7 +177,7 @@
       <div class="shell">
         <div class="section-heading compact-heading">
           <p class="eyebrow">Control integration</p>
-          <h2>Estimate, compensate, replan</h2>
+          <h2>Estimate, compensate, plan</h2>
         </div>
 
         <ol class="workflow-steps">
@@ -354,60 +344,6 @@
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section results-section" id="results">
-      <div class="shell">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Results</p>
-          <h2>Success across paired simulation trials</h2>
-          <p class="section-lead">Success counts are reported over 20 paired runs within each task. Task definitions and thresholds differ across columns.</p>
-        </div>
-
-        <div class="table-wrap" tabindex="0" aria-label="Scrollable simulation success table">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Method</th>
-                <th scope="col">Pendulum</th>
-                <th scope="col">Navigation</th>
-                <th scope="col">Latent Reacher</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">MPPI</th>
-                <td>0/20</td>
-                <td>0/20</td>
-                <td>0/20</td>
-              </tr>
-              <tr class="highlight-row">
-                <th scope="row">MPPI + MDOB</th>
-                <td><strong>20/20</strong></td>
-                <td><strong>20/20</strong></td>
-                <td><strong>19/20</strong></td>
-              </tr>
-              <tr>
-                <th scope="row">Tube-MPPI</th>
-                <td>19/20</td>
-                <td>0/20</td>
-                <td>0/20</td>
-              </tr>
-              <tr>
-                <th scope="row">RMPPI</th>
-                <td>20/20</td>
-                <td>20/20</td>
-                <td>0/20</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <figure class="wide-figure benchmark-figure">
-          <img src="static/images/exp_state_effect_benchmarks.png" alt="State-effect benchmark curves for the inverted-pendulum and latent Reacher experiments." loading="lazy">
-          <figcaption>Representative tracking and disturbance-estimation traces for the state-effect studies.</figcaption>
-        </figure>
       </div>
     </section>
 
