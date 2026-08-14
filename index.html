@@ -189,26 +189,6 @@
 
     <section class="section workflow-section">
       <div class="shell">
-        <div class="section-heading compact-heading">
-          <p class="eyebrow">Control integration</p>
-          <h2>Estimate, compensate, plan</h2>
-        </div>
-
-        <ol class="workflow-steps">
-          <li>
-            <span>1</span>
-            <div><strong>Observe</strong><p>Compare completed model predictions and cost queries with feedback.</p></div>
-          </li>
-          <li>
-            <span>2</span>
-            <div><strong>Estimate</strong><p>Recover state-effect and local cost disturbances through sampled forward evaluations.</p></div>
-          </li>
-          <li>
-            <span>3</span>
-            <div><strong>Compensate</strong><p>Correct subsequent state propagation and the costs used to score candidate rollouts.</p></div>
-          </li>
-        </ol>
-
         <div class="state-animation">
           <div class="state-animation-copy">
             <div>
@@ -234,10 +214,24 @@
         </div>
 
         <div class="control-integration">
-          <div class="integration-copy">
-            <p class="eyebrow">Complete integration</p>
-            <h3>Both estimates enter the next control update</h3>
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Control integration</p>
+            <h2>Estimate, compensate, plan</h2>
           </div>
+          <ol class="workflow-steps">
+            <li>
+              <span>1</span>
+              <div><strong>Observe</strong><p>Compare completed model predictions and cost queries with feedback.</p></div>
+            </li>
+            <li>
+              <span>2</span>
+              <div><strong>Estimate</strong><p>Recover state-effect and local cost disturbances through sampled forward evaluations.</p></div>
+            </li>
+            <li>
+              <span>3</span>
+              <div><strong>Compensate</strong><p>Correct subsequent state propagation and the costs used to score candidate rollouts.</p></div>
+            </li>
+          </ol>
           <figure class="wide-figure control-figure">
             <a href="static/images/control-flow.png" target="_blank" aria-label="Open the MDOB control flow at full resolution">
               <img src="static/images/control-flow.png" alt="MDOB computation flow from task feedback through state-effect and cost disturbance observers into compensated sampling-based control." loading="lazy">
@@ -380,28 +374,6 @@
       </div>
     </section>
 
-    <section class="section citation-section" id="citation">
-      <div class="shell citation-layout">
-        <div>
-          <p class="eyebrow">Citation</p>
-          <h2>Use MDOB in your work</h2>
-          <p>The citation record will be updated when the paper is published.</p>
-        </div>
-        <div class="bibtex-wrap">
-          <button class="copy-button" type="button" data-copy-target="bibtex" aria-label="Copy BibTeX citation">
-            <i data-lucide="copy" aria-hidden="true"></i>
-            <span>Copy</span>
-          </button>
-          <pre id="bibtex"><code>@misc{zhu2026mdob,
-  title  = {Modern Disturbance Observers: Online Compensation of
-            Sim-to-Real Mismatch from Traditional Models to World Models},
-  author = {Zhu, Tianqi and Yang, Jun and Mao, Jianliang and
-            Li, Cong and Li, Shihua},
-  year   = {2026}
-}</code></pre>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
