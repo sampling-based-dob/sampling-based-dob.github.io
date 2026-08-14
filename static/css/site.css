@@ -218,12 +218,13 @@ h3 {
 
 .hero-media {
   object-fit: cover;
-  opacity: 0.35;
-  filter: saturate(0.75) contrast(1.1);
+  object-position: center 52%;
+  opacity: 0.75;
+  filter: saturate(0.88) contrast(1.04);
 }
 
 .hero-scrim {
-  background: rgba(4, 24, 39, 0.78);
+  background: rgba(4, 24, 39, 0.62);
 }
 
 .hero-content {
@@ -284,6 +285,9 @@ h3 {
 }
 
 .affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
   max-width: 920px;
   margin-bottom: 31px;
   color: #c8d6e1;
@@ -806,6 +810,8 @@ h3 {
 }
 
 .hardware-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid var(--line);
@@ -813,21 +819,63 @@ h3 {
   box-shadow: 0 12px 34px rgba(8, 36, 58, 0.06);
 }
 
-.hardware-card > img {
+.hardware-media {
   width: 100%;
-  aspect-ratio: 16 / 5;
-  object-fit: contain;
-  background: #f7f9fa;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--navy-deep);
   border-bottom: 1px solid var(--line);
 }
 
+.hardware-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hardware-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 27px 28px 30px;
 }
 
-.hardware-copy p:last-child {
+.hardware-copy > p:last-of-type {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.method-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 3px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.method-tabs button {
+  min-height: 40px;
+  padding: 7px 9px;
+  color: #42566a;
+  background: #f4f7f9;
+  border: 1px solid #d7e0e7;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.method-tabs button:hover,
+.method-tabs button:focus-visible {
+  color: var(--navy);
+  border-color: #8ea2b3;
+}
+
+.method-tabs button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--navy);
+  border-color: var(--navy);
 }
 
 .results-section {
@@ -1152,10 +1200,6 @@ tbody tr:last-child td {
     grid-template-columns: 1fr;
   }
 
-  .hardware-card > img {
-    aspect-ratio: 16 / 6;
-  }
-
   .footer-layout {
     display: grid;
     gap: 16px;
@@ -1203,6 +1247,7 @@ tbody tr:last-child td {
   .affiliations {
     width: 100%;
     max-width: 100%;
+    gap: 3px 12px;
     overflow-wrap: break-word;
   }
 

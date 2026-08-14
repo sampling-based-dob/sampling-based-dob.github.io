@@ -14,7 +14,7 @@
   <title>MDOB | Modern Disturbance Observers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet">
+  <link id="project-fonts" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet" media="print">
   <link rel="stylesheet" href="static/css/site.css">
 </head>
 <body>
@@ -44,8 +44,8 @@
 
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
-      <video class="hero-media" autoplay muted loop playsinline preload="metadata" poster="static/images/nav_8obs_input_const_margin005_frame_sequence.png" aria-hidden="true">
-        <source src="static/videos/fig7_nav_8obs_style.mp4" type="video/mp4">
+      <video class="hero-media" autoplay muted loop playsinline preload="metadata" poster="static/images/experiments/hero-dualarm.jpg" aria-hidden="true">
+        <source src="static/videos/experiments/dualarm_mdob.mp4" type="video/mp4">
       </video>
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="hero-content shell">
@@ -61,7 +61,9 @@
           <span>Shihua Li<sup>1</sup></span>
         </div>
         <p class="affiliations">
-          <sup>1</sup>Southeast University &nbsp; <sup>2</sup>HKUST (Guangzhou) &nbsp; <sup>3</sup>Shanghai University of Electric Power
+          <span><sup>1</sup>Southeast University</span>
+          <span><sup>2</sup>The Hong Kong University of Science and Technology (Guangzhou)</span>
+          <span><sup>3</sup>Shanghai University of Electric Power</span>
         </p>
 
         <div class="hero-actions" aria-label="Project resources">
@@ -313,21 +315,42 @@
         </div>
 
         <div class="hardware-grid">
-          <article class="hardware-card">
-            <img src="static/images/real-car.png" alt="Comparison of real-car obstacle-avoidance trajectories for MPPI, MPPI plus DOB, MPPI plus MDOB, Tube-MPPI, and RMPPI." loading="lazy">
+          <article class="hardware-card" data-video-group="car">
+            <div class="hardware-media">
+              <video controls playsinline preload="metadata" poster="static/images/experiments/car-mdob.jpg" data-video-player aria-label="Real-car navigation with MPPI plus MDOB">
+                <source src="static/videos/experiments/car_mdob.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="hardware-copy">
               <p class="experiment-label">Real-car navigation</p>
               <h3>Obstacle avoidance from local cost changes</h3>
               <p>MPPI+MDOB completed the representative route in <strong>9.29 s</strong>, the shortest time among the shown trials.</p>
+              <div class="method-tabs" role="group" aria-label="Real-car navigation method">
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_mppi.mp4" data-video-label="Real-car navigation with MPPI">MPPI</button>
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_dob.mp4" data-video-label="Real-car navigation with MPPI plus DOB">MPPI + DOB</button>
+                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/car_mdob.mp4" data-video-label="Real-car navigation with MPPI plus MDOB">MPPI + MDOB</button>
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_tubemppi.mp4" data-video-label="Real-car navigation with Tube-MPPI">Tube-MPPI</button>
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_rmppi.mp4" data-video-label="Real-car navigation with RMPPI">RMPPI</button>
+              </div>
             </div>
           </article>
 
-          <article class="hardware-card">
-            <img src="static/images/dual-arm.png" alt="Comparison of dual-arm obstacle avoidance for MPPI, MPPI plus MDOB, Tube-MPPI, and RMPPI." loading="lazy">
+          <article class="hardware-card" data-video-group="dualarm">
+            <div class="hardware-media">
+              <video controls playsinline preload="metadata" poster="static/images/experiments/hero-dualarm.jpg" data-video-player aria-label="Dual-arm obstacle avoidance with MPPI plus MDOB">
+                <source src="static/videos/experiments/dualarm_mdob.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="hardware-copy">
               <p class="experiment-label">Dual-arm manipulation</p>
               <h3>Collision-cost observation without velocity tracking</h3>
               <p>The obstacle pose updates the collision model, but its velocity is not supplied. MDOB estimates motion from changing collision-cost queries and begins avoidance earlier.</p>
+              <div class="method-tabs" role="group" aria-label="Dual-arm obstacle-avoidance method">
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_mppi.mp4" data-video-label="Dual-arm obstacle avoidance with MPPI">MPPI</button>
+                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/dualarm_mdob.mp4" data-video-label="Dual-arm obstacle avoidance with MPPI plus MDOB">MPPI + MDOB</button>
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_tubemppi.mp4" data-video-label="Dual-arm obstacle avoidance with Tube-MPPI">Tube-MPPI</button>
+                <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_rmppi.mp4" data-video-label="Dual-arm obstacle avoidance with RMPPI">RMPPI</button>
+              </div>
             </div>
           </article>
         </div>
@@ -422,7 +445,7 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="static/js/vendor/lucide.min.js"></script>
   <script src="static/js/site.js"></script>
 </body>
 </html>

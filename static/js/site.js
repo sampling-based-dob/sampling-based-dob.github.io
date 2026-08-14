@@ -1,4 +1,7 @@
 (() => {
+  const fontStylesheet = document.getElementById('project-fonts');
+  if (fontStylesheet) fontStylesheet.media = 'all';
+
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -61,6 +64,46 @@
     });
   });
 
+  document.querySelectorAll('[data-video-group]').forEach((group) => {
+    const player = group.querySelector('[data-video-player]');
+    const buttons = Array.from(group.querySelectorAll('[data-video-source]'));
+    if (!player || buttons.length === 0) return;
+
+    const activateVideo = (button) => {
+      buttons.forEach((candidate) => {
+        candidate.setAttribute('aria-pressed', String(candidate === button));
+      });
+
+      document.querySelectorAll('[data-video-player]').forEach((otherPlayer) => {
+        if (otherPlayer !== player) otherPlayer.pause();
+      });
+
+      player.pause();
+      player.src = button.dataset.videoSource;
+      player.setAttribute('aria-label', button.dataset.videoLabel);
+      player.removeAttribute('poster');
+      player.load();
+      player.play().catch(() => {});
+    };
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => activateVideo(button));
+      button.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+
+        let nextIndex = index;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % buttons.length;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = buttons.length - 1;
+
+        buttons[nextIndex].focus();
+        activateVideo(buttons[nextIndex]);
+      });
+    });
+  });
+
   const copyButton = document.querySelector('[data-copy-target]');
   if (copyButton) {
     copyButton.addEventListener('click', async () => {
@@ -84,11 +127,15 @@
     document.querySelectorAll('video[autoplay]').forEach((video) => video.pause());
   }
 
-  if (window.lucide) {
+  const renderIcons = () => {
+    if (!window.lucide) return;
     window.lucide.createIcons({
       attrs: {
         'stroke-width': 1.8,
       },
     });
-  }
+  };
+
+  renderIcons();
+  window.addEventListener('load', renderIcons, { once: true });
 })();
