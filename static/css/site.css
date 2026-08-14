@@ -678,7 +678,7 @@ h3 {
 .state-animation video {
   display: block;
   width: 100%;
-  aspect-ratio: 19 / 7;
+  aspect-ratio: 25 / 8;
   object-fit: contain;
   background: #ffffff;
   border: 1px solid var(--line);
