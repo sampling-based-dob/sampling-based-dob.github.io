@@ -195,12 +195,18 @@
           </li>
         </ol>
 
-        <figure class="wide-figure control-figure">
-          <a href="static/images/control-flow.png" target="_blank" aria-label="Open the MDOB control flow at full resolution">
-            <img src="static/images/control-flow.png" alt="MDOB computation flow from task feedback through state-effect and cost disturbance observers into compensated sampling-based control." loading="lazy">
-          </a>
-          <figcaption>State estimates modify forward dynamics; cost estimates modify rollout evaluation. The sampling-based controller then selects the next input.</figcaption>
-        </figure>
+        <div class="state-animation">
+          <div class="state-animation-copy">
+            <div>
+              <p class="eyebrow">State-effect compensation</p>
+              <h3>From feedback mismatch to corrected prediction</h3>
+            </div>
+            <p>Candidate disturbances are propagated through the forward model and scored against the completed feedback transition. Regularization and physical admissibility suppress implausible explanations, and the resulting estimate corrects the next state rollout.</p>
+          </div>
+          <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/state-effect-estimation.jpg" aria-label="State-effect disturbance estimation and compensation animation">
+            <source src="static/videos/state_effect_estimation.mp4" type="video/mp4">
+          </video>
+        </div>
 
         <div class="cost-animation">
           <div class="cost-animation-copy">
@@ -211,6 +217,19 @@
           <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/nav_8obs_input_const_margin005_frame_sequence.png">
             <source src="static/videos/figure5_cost_disturbance_animation_clean.mp4" type="video/mp4">
           </video>
+        </div>
+
+        <div class="control-integration">
+          <div class="integration-copy">
+            <p class="eyebrow">Complete integration</p>
+            <h3>Both estimates enter the next control update</h3>
+          </div>
+          <figure class="wide-figure control-figure">
+            <a href="static/images/control-flow.png" target="_blank" aria-label="Open the MDOB control flow at full resolution">
+              <img src="static/images/control-flow.png" alt="MDOB computation flow from task feedback through state-effect and cost disturbance observers into compensated sampling-based control." loading="lazy">
+            </a>
+            <figcaption>State estimates modify forward dynamics; cost estimates modify rollout evaluation. The sampling-based controller then selects the next input.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

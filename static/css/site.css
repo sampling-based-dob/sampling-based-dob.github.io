@@ -416,7 +416,9 @@ h3 {
 }
 
 .abstract-copy h3,
+.state-animation-copy h3,
 .cost-animation-copy h3,
+.integration-copy h3,
 .hardware-copy h3,
 .experiment-copy h3 {
   margin-bottom: 16px;
@@ -431,6 +433,7 @@ h3 {
 .abstract-copy p:last-child,
 .principle-note p,
 .channel-card > p,
+.state-animation-copy p:last-child,
 .cost-animation-copy p:last-child,
 .hardware-copy p:last-child,
 .experiment-copy > p:last-of-type {
@@ -626,8 +629,34 @@ h3 {
   line-height: 1.5;
 }
 
-.control-figure {
-  margin-bottom: 76px;
+.state-animation {
+  padding-top: 58px;
+  border-top: 1px solid var(--line);
+}
+
+.state-animation-copy {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.38fr);
+  gap: 52px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.state-animation-copy p:last-child,
+.cost-animation-copy p:last-child {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.state-animation video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 19 / 6;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
 }
 
 .cost-animation {
@@ -635,13 +664,9 @@ h3 {
   grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.38fr);
   gap: 52px;
   align-items: center;
+  margin-top: 76px;
   padding-top: 58px;
   border-top: 1px solid var(--line);
-}
-
-.cost-animation-copy p:last-child {
-  color: var(--muted);
-  font-size: 0.93rem;
 }
 
 .cost-animation video {
@@ -652,6 +677,16 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
+}
+
+.control-integration {
+  margin-top: 76px;
+  padding-top: 58px;
+  border-top: 1px solid var(--line);
+}
+
+.integration-copy {
+  margin-bottom: 28px;
 }
 
 .experiments-section {
@@ -1076,6 +1111,7 @@ h3 {
 
   .channel-grid,
   .hardware-grid,
+  .state-animation-copy,
   .cost-animation {
     grid-template-columns: 1fr;
   }
@@ -1089,6 +1125,7 @@ h3 {
     gap: 20px;
   }
 
+  .state-animation-copy,
   .cost-animation {
     gap: 28px;
   }
@@ -1200,11 +1237,12 @@ h3 {
     font-size: 1.35rem;
   }
 
-  .control-figure {
-    margin-bottom: 54px;
+  .state-animation,
+  .cost-animation {
+    padding-top: 44px;
   }
 
-  .cost-animation {
+  .control-integration {
     padding-top: 44px;
   }
 
