@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Modern Disturbance Observers provide online state-effect and cost-disturbance compensation for models accessed through forward rollouts and cost queries.">
-  <meta name="keywords" content="modern disturbance observer, MDOB, sim-to-real, model predictive control, world models, robotics">
+  <meta name="description" content="Sampling-Based Disturbance Observer (SDOB): feedback-based compensation of sim-to-real mismatch through state rollouts and cost queries, from traditional models to world models.">
+  <meta name="keywords" content="sampling-based disturbance observer, SDOB, sim-to-real, sampling-based model predictive control, world models, robotics">
   <meta name="theme-color" content="#08243a">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Modern Disturbance Observers">
-  <meta property="og:description" content="Online compensation of sim-to-real mismatch from traditional models to world models.">
-  <meta property="og:image" content="https://modern-dob.github.io/static/images/mdob-overview.png">
-  <meta property="og:url" content="https://modern-dob.github.io/">
-  <title>MDOB | Modern Disturbance Observers</title>
+  <meta property="og:title" content="Sampling-Based Disturbance Observer">
+  <meta property="og:description" content="Compensation of sim-to-real mismatch from traditional models to world models through state and cost disturbance channels.">
+  <meta property="og:image" content="https://sampling-based-dob.github.io/static/images/sdob-overview.png">
+  <meta property="og:url" content="https://sampling-based-dob.github.io/">
+  <title>SDOB | Sampling-Based Disturbance Observer</title>
+  <link rel="canonical" href="https://sampling-based-dob.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link id="project-fonts" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap" rel="stylesheet" media="print">
@@ -28,9 +29,10 @@
       <div class="nav-links" id="nav-links">
         <a href="#video">Video</a>
         <a href="#overview">Overview</a>
+        <a href="#contributions">Contributions</a>
         <a href="#method">Method</a>
         <a href="#experiments">Experiments</a>
-        <a class="nav-code" href="https://github.com/zhutianqi2006/2026_modern_dob" target="_blank" rel="noreferrer">
+        <a class="nav-code" href="https://github.com/sampling-based-dob/sampling-based-dob" target="_blank" rel="noreferrer">
           <i data-lucide="github" aria-hidden="true"></i>
           <span>Code</span>
         </a>
@@ -45,8 +47,8 @@
       </video>
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="hero-content shell">
-        <h1 id="hero-title"><span class="hero-acronym">M</span>odern <span class="hero-acronym">D</span>isturbance <span class="hero-acronym">Ob</span>servers</h1>
-        <p class="hero-subtitle">Online Compensation of Sim-to-Real Mismatch from Traditional Models to World Models</p>
+        <h1 id="hero-title"><span class="hero-acronym">S</span>ampling-Based <span class="hero-acronym">D</span>isturbance <span class="hero-acronym">Ob</span>server</h1>
+        <p class="hero-subtitle">Compensation of Sim-to-Real Mismatch from Traditional Models to World Models</p>
 
         <div class="authors" aria-label="Authors">
           <a href="https://github.com/zhutianqi2006/" target="_blank" rel="noreferrer">Tianqi Zhu<sup>1</sup></a>
@@ -62,11 +64,11 @@
         </p>
 
         <div class="hero-actions" aria-label="Project resources">
-          <a class="button button-primary" href="static/papers/mdob-paper.pdf" target="_blank">
+          <a class="button button-primary" href="static/papers/sdob-paper.pdf" target="_blank">
             <i data-lucide="file-text" aria-hidden="true"></i>
             <span>Paper</span>
           </a>
-          <a class="button button-secondary" href="https://github.com/zhutianqi2006/2026_modern_dob" target="_blank" rel="noreferrer">
+          <a class="button button-secondary" href="https://github.com/sampling-based-dob/sampling-based-dob" target="_blank" rel="noreferrer">
             <i data-lucide="github" aria-hidden="true"></i>
             <span>Code</span>
           </a>
@@ -78,19 +80,19 @@
       </div>
     </section>
 
-    <section class="signal-band" aria-label="MDOB highlights">
+    <section class="signal-band" aria-label="SDOB highlights">
       <div class="shell signal-grid">
         <div class="signal-item">
           <strong>2</strong>
-          <span>observable disturbance channels</span>
+          <span>state and cost disturbance channels</span>
         </div>
         <div class="signal-item">
-          <i data-lucide="route" aria-hidden="true"></i>
-          <span>forward rollouts and cost queries</span>
+          <strong>5</strong>
+          <span>simulation studies</span>
         </div>
         <div class="signal-item">
-          <i data-lucide="refresh-cw" aria-hidden="true"></i>
-          <span>online correction without retraining</span>
+          <strong>3</strong>
+          <span>real-robot demonstrations</span>
         </div>
       </div>
     </section>
@@ -99,11 +101,11 @@
       <div class="shell">
         <div class="section-heading">
           <p class="eyebrow">Project video</p>
-          <h2>MDOB at a glance</h2>
-          <p class="section-lead">A visual introduction to the motivation, disturbance channels, online compensation, and experimental demonstrations.</p>
+          <h2>SDOB at a glance</h2>
+          <p class="section-lead">A visual introduction to disturbance observation through rollout and cost-query interfaces. This video uses the earlier MDOB name; the current manuscript uses SDOB.</p>
         </div>
         <div class="project-video-frame">
-          <iframe src="https://www.youtube.com/embed/DEfM0N9Vm1c?si=lAmFOomS7fCGbAQ4" title="Modern Disturbance Observers project video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/DEfM0N9Vm1c?si=lAmFOomS7fCGbAQ4" title="Sampling-Based Disturbance Observer project video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -113,27 +115,42 @@
         <div class="section-heading">
           <p class="eyebrow">Overview</p>
           <h2>One observer principle, modern model interfaces</h2>
-          <p class="section-lead">MDOB carries disturbance observation beyond explicit plant models to simulators, cost-query interfaces, and learned world models.</p>
+          <p class="section-lead">SDOB extends disturbance observation to analytical models, simulators, and learned predictors accessed through state rollouts or cost queries.</p>
         </div>
 
         <div class="abstract-layout">
           <div class="abstract-copy">
             <h3>Abstract</h3>
-            <p>Robotic controllers increasingly rely on analytical models, simulators, cost-query interfaces, and learned world models. Physical deployment can deviate from nominal assumptions, and additional disturbances may arise even when the model itself is accurate.</p>
-            <p>MDOB separates two observable channels: <strong>state-effect disturbances</strong>, where the feedback state differs from its prediction, and <strong>cost disturbances</strong>, where the same query state receives different costs as the perceived environment changes. These estimates compensate future state rollouts and cost evaluation online without plant inversion or model retraining.</p>
+            <p>Robotic controllers increasingly rely on analytical models, simulators, cost-query interfaces, and learned world models. However, physical deployment can deviate from nominal assumptions, and additional disturbances may arise even when the model itself is accurate. In control systems, disturbance observers (DOB) are widely used to estimate such unmeasured effects from nominal models and measured feedback. Classical DOB formulations are generally built around explicit plant models.</p>
+            <p>This paper develops the <strong>sampling-based disturbance observer (SDOB)</strong>, extending the DOB principle to a broader range of models, including simulators and learned world models, through state-rollout or cost-query interfaces. SDOB separates two observable channels: <strong>state-effect disturbances</strong>, for which the feedback state differs from its prediction, and <strong>cost disturbances</strong>, for which the same query state receives different costs as the perceived environment changes. Diverse simulation and real-robot experiments across traditional and learned models demonstrate the effectiveness of SDOB in compensating for model mismatch and improving control performance.</p>
           </div>
           <aside class="principle-note" aria-label="Core principle">
             <span class="note-label">Core principle</span>
-            <p>Observe mismatch at the interface the controller already exposes, then carry that information into the next rollout.</p>
+            <p>Use successive feedback to estimate task-relevant mismatch, then correct future state predictions and cost evaluation.</p>
           </aside>
         </div>
 
         <figure class="wide-figure overview-figure">
-          <a href="static/images/mdob-overview.png" target="_blank" aria-label="Open the MDOB overview figure at full resolution">
-            <img src="static/images/mdob-overview.png" alt="Overview connecting classical control models, robot cost models, and world models to state-effect and cost disturbance channels in MDOB." loading="lazy">
+          <a href="static/images/sdob-overview.png" target="_blank" aria-label="Open the SDOB overview figure at full resolution">
+            <img src="static/images/sdob-overview.png" alt="Overview connecting classical control models, robot cost models, and world models to state-effect and cost disturbance channels in SDOB." loading="lazy">
           </a>
-          <figcaption>MDOB provides a common observation interface across model classes while keeping state and cost effects distinct.</figcaption>
+          <figcaption>SDOB connects different model classes through state-rollout and cost-query interfaces. Each task supplies the correction model and queries needed to estimate its disturbance effects.</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section contributions-section" id="contributions">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Contributions</p>
+          <h2>Disturbance compensation through model queries</h2>
+          <p class="section-lead">SDOB targets locally persistent, task-relevant mismatch through the interfaces used for prediction and planning.</p>
+        </div>
+        <ol class="workflow-steps contribution-list">
+          <li><span>1</span><div><strong>Two predictive-control interfaces</strong><p>We formulate disturbance compensation at two predictive-control interfaces. The state channel represents feedback mismatch through a task-defined correction model, while the cost channel represents local motion of an environment-dependent cost field.</p></div></li>
+          <li><span>2</span><div><strong>Forward-evaluation implementation</strong><p>A forward-evaluation implementation estimates these corrections from successive feedback and incorporates them into future state propagation and cost evaluation. Given the required correction and query interfaces, SDOB does not require analytic model inversion or retraining of the nominal model.</p></div></li>
+          <li><span>3</span><div><strong>Evaluation and reproducibility</strong><p>Five simulation studies and three representative real-robot demonstrations evaluate complete SDOB-equipped controller configurations across analytical and learned models. Source code, configurations, and simulation scripts are released to support reproducibility.</p></div></li>
+        </ol>
       </div>
     </section>
 
@@ -142,7 +159,7 @@
         <div class="section-heading">
           <p class="eyebrow">Two channels</p>
           <h2>What changed: the realized state or its evaluation?</h2>
-          <p class="section-lead">The distinction keeps physical motion mismatch separate from environmental changes that appear through task costs.</p>
+          <p class="section-lead">The state channel fits feedback transitions within a task-defined disturbance model. The cost channel estimates local motion of an environment-dependent cost field.</p>
         </div>
 
         <div class="channel-grid">
@@ -157,7 +174,7 @@
             <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/pendulum_video4s_snapshot_clean.png">
               <source src="static/videos/fig3a_state_effect_animation.mp4" type="video/mp4">
             </video>
-            <p>The same command produces a different realized state. MDOB tests candidate disturbances through forward prediction and scores how well each candidate explains the completed transition.</p>
+            <p>The feedback state differs from its nominal prediction. SDOB samples corrections within a task-defined disturbance model, evaluates them through forward prediction, and scores how well they explain the completed transition.</p>
             <div class="channel-summary">
               <span>Same command</span>
               <i data-lucide="arrow-right" aria-hidden="true"></i>
@@ -176,7 +193,7 @@
             <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/nav_8obs_input_const_margin005_frame_sequence.png">
               <source src="static/videos/figure3b_cost_disturbance_animation.mp4" type="video/mp4">
             </video>
-            <p>The same query state receives a different cost after the perceived environment changes. MDOB matches local cost patterns across consecutive feedback updates.</p>
+            <p>The same query state receives a different cost after the perceived environment changes. SDOB matches local cost patterns across successive feedback updates to estimate cost-field motion for future rollout evaluation.</p>
             <div class="channel-summary">
               <span>Same state</span>
               <i data-lucide="arrow-right" aria-hidden="true"></i>
@@ -225,7 +242,7 @@
             </li>
             <li>
               <span>2</span>
-              <div><strong>Estimate</strong><p>Recover state-effect and local cost disturbances through sampled forward evaluations.</p></div>
+              <div><strong>Estimate</strong><p>Fit task-defined state corrections and local cost-field motion using forward evaluations.</p></div>
             </li>
             <li>
               <span>3</span>
@@ -233,8 +250,8 @@
             </li>
           </ol>
           <figure class="wide-figure control-figure">
-            <a href="static/images/control-flow.png" target="_blank" aria-label="Open the MDOB control flow at full resolution">
-              <img src="static/images/control-flow.png" alt="MDOB computation flow from task feedback through state-effect and cost disturbance observers into compensated sampling-based control." loading="lazy">
+            <a href="static/images/control-flow.png" target="_blank" aria-label="Open the SDOB control flow at full resolution">
+              <img src="static/images/control-flow.png" alt="SDOB computation flow from task feedback through state-effect and cost disturbance observers into compensated sampling-based control." loading="lazy">
             </a>
             <figcaption>State estimates modify forward dynamics; cost estimates modify rollout evaluation. The sampling-based controller then selects the next input.</figcaption>
           </figure>
@@ -246,8 +263,8 @@
       <div class="shell">
         <div class="section-heading section-heading-light">
           <p class="eyebrow">Simulation</p>
-          <h2>Controlled tests across three model classes</h2>
-          <p class="section-lead">Each study isolates the disturbance channel exposed by its controller interface and uses paired 20-run evaluations.</p>
+          <h2>Five simulation studies across model interfaces</h2>
+          <p class="section-lead">The studies compare complete controller configurations across analytical and learned models using 20 paired trials or seeds. They assess task performance under the specified disturbances.</p>
         </div>
 
         <div class="experiment-tabs" role="tablist" aria-label="Simulation experiments">
@@ -263,6 +280,14 @@
             <i data-lucide="brain-circuit" aria-hidden="true"></i>
             <span>World-model Reacher</span>
           </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="experiment-rocket" id="tab-rocket" data-experiment="rocket" tabindex="-1">
+            <i data-lucide="rocket" aria-hidden="true"></i>
+            <span>Rocket Collect</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="experiment-landing" id="tab-landing" data-experiment="landing" tabindex="-1">
+            <i data-lucide="target" aria-hidden="true"></i>
+            <span>Visual Landing</span>
+          </button>
         </div>
 
         <div class="experiment-panels">
@@ -275,10 +300,10 @@
             <div class="experiment-copy">
               <p class="experiment-label">Analytical model · State effect</p>
               <h3>Sinusoidal torque disturbance</h3>
-              <p>MDOB estimates a matched torque bias from the completed state transition and compensates the next MPPI rollout.</p>
+              <p>SDOB estimates a matched torque bias from the completed state transition and compensates the next MPPI rollout.</p>
               <dl class="metric-list">
                 <div><dt>Success</dt><dd>20/20</dd></div>
-                <div><dt>Disturbance RMSE</dt><dd>0.014</dd></div>
+                <div><dt>Disturbance RMSE</dt><dd>0.014 N·m</dd></div>
                 <div><dt>P95 planning</dt><dd>8.232 ms</dd></div>
               </dl>
             </div>
@@ -310,8 +335,8 @@
             </div>
             <div class="experiment-copy">
               <p class="experiment-label">Latent world model · State effect</p>
-              <h3>Persistent action bias in image space</h3>
-              <p>The controller plans with image observations and latent rollouts. MDOB estimates an equivalent action bias from latent endpoint mismatch.</p>
+              <h3>Action-bias compensation from latent feedback</h3>
+              <p>The frozen LeWorldModel predicts latent rollouts from images. SDOB estimates an equivalent action bias from latent endpoint mismatch. Evaluation uses 20 tasks that disturbance-free MPPI can already solve.</p>
               <dl class="metric-list">
                 <div><dt>Success</dt><dd>19/20</dd></div>
                 <div><dt>Tail error</dt><dd>0.030 rad</dd></div>
@@ -319,7 +344,44 @@
               </dl>
             </div>
           </article>
+
+          <article class="experiment-panel" id="experiment-rocket" role="tabpanel" aria-labelledby="tab-rocket" data-panel="rocket" hidden>
+            <div class="experiment-media">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/rocket-results.png" aria-label="Rocket Collect comparison across MPPI, MPPI with SDOB, Tube-MPPI, and RMPPI">
+                <source src="static/videos/rocket_collect_comparison.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="experiment-copy">
+              <p class="experiment-label">MMBench2 world model · Cost channel</p>
+              <h3>Collecting a coin among faster asteroids</h3>
+              <p>The world model supplies planning scores, while reconstructed images supply obstacle-distance cost maps. SDOB estimates local map motion and compensates future costs with asteroid speed increased to 1.5× nominal.</p>
+              <dl class="metric-list">
+                <div><dt>SDOB success</dt><dd>19/20</dd></div>
+                <div><dt>SDOB collisions</dt><dd>0/20</dd></div>
+                <div><dt>MPPI success</dt><dd>16/20</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="experiment-panel" id="experiment-landing" role="tabpanel" aria-labelledby="tab-landing" data-panel="landing" hidden>
+            <div class="experiment-media">
+              <video autoplay muted loop playsinline controls preload="metadata" poster="static/images/landing-results.png" aria-label="Visual Landing comparison across MPPI, MPPI with SDOB, Tube-MPPI, and RMPPI">
+                <source src="static/videos/landing_comparison.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="experiment-copy">
+              <p class="experiment-label">MMBench2 world model · Both channels</p>
+              <h3>Touchdown alignment on a moving deck</h3>
+              <p>With an unknown horizontal input bias and deck speed increased to 1.6× nominal, SDOB corrects state predictions and shifts future landing targets. All four methods reach the deck; the main benefit is improved touchdown alignment.</p>
+              <dl class="metric-list">
+                <div><dt>SDOB deck contact</dt><dd>20/20</dd></div>
+                <div><dt>SDOB center error</dt><dd>7.38 px</dd></div>
+                <div><dt>MPPI center error</dt><dd>20.49 px</dd></div>
+              </dl>
+            </div>
+          </article>
         </div>
+        <p class="experiment-note">Metrics report MPPI+SDOB unless a baseline is named. These comparisons evaluate complete controller configurations; they do not separately isolate each channel or correction prior.</p>
       </div>
     </section>
 
@@ -327,25 +389,25 @@
       <div class="shell">
         <div class="section-heading">
           <p class="eyebrow">Hardware</p>
-          <h2>Closed-loop deployment with real feedback</h2>
-          <p class="section-lead">Representative demonstrations test whether the same rollout and cost-query updates remain executable with sensing, actuation, and timing mismatch.</p>
+          <h2>Three real-robot demonstrations</h2>
+          <p class="section-lead">Vehicle and dual-arm obstacle avoidance demonstrate feedback compensation in closed loop. PointWorld box lifting uses initial feedback calibration followed by execution of a single plan.</p>
         </div>
 
         <div class="hardware-grid">
           <article class="hardware-card" data-video-group="car">
             <div class="hardware-media">
-              <video controls playsinline preload="metadata" poster="static/images/experiments/car-mdob.jpg" data-video-player aria-label="Real-car navigation with MPPI plus MDOB">
+              <video controls playsinline preload="metadata" poster="static/images/experiments/car-mdob.jpg" data-video-player aria-label="Real-car navigation with MPPI plus SDOB">
                 <source src="static/videos/experiments/car_mdob.mp4" type="video/mp4">
               </video>
             </div>
             <div class="hardware-copy">
               <p class="experiment-label">Real-car navigation</p>
               <h3>Obstacle avoidance from local cost changes</h3>
-              <p>MPPI+MDOB completed the representative route in <strong>9.29 s</strong>, the shortest time among the shown trials.</p>
+              <p>MPPI+SDOB completed the representative route in <strong>9.29 s</strong>, the shortest time among the shown trials.</p>
               <div class="method-tabs" role="group" aria-label="Real-car navigation method">
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_mppi.mp4" data-video-label="Real-car navigation with MPPI">MPPI</button>
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_dob.mp4" data-video-label="Real-car navigation with MPPI plus DOB">MPPI + DOB</button>
-                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/car_mdob.mp4" data-video-label="Real-car navigation with MPPI plus MDOB">MPPI + MDOB</button>
+                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/car_mdob.mp4" data-video-label="Real-car navigation with MPPI plus SDOB">MPPI + SDOB</button>
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_tubemppi.mp4" data-video-label="Real-car navigation with Tube-MPPI">Tube-MPPI</button>
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/car_rmppi.mp4" data-video-label="Real-car navigation with RMPPI">RMPPI</button>
               </div>
@@ -354,20 +416,35 @@
 
           <article class="hardware-card" data-video-group="dualarm">
             <div class="hardware-media">
-              <video controls playsinline preload="metadata" poster="static/images/experiments/hero-dualarm.jpg" data-video-player aria-label="Dual-arm obstacle avoidance with MPPI plus MDOB">
+              <video controls playsinline preload="metadata" poster="static/images/experiments/hero-dualarm.jpg" data-video-player aria-label="Dual-arm obstacle avoidance with MPPI plus SDOB">
                 <source src="static/videos/experiments/dualarm_mdob.mp4" type="video/mp4">
               </video>
             </div>
             <div class="hardware-copy">
               <p class="experiment-label">Dual-arm manipulation</p>
               <h3>Collision-cost observation without velocity tracking</h3>
-              <p>The obstacle pose updates the collision model, but its velocity is not supplied. MDOB estimates motion from changing collision-cost queries and begins avoidance earlier.</p>
+              <p>The obstacle pose updates the collision model, but its velocity is not supplied. SDOB estimates motion from changing collision-cost queries and begins avoidance earlier.</p>
               <div class="method-tabs" role="group" aria-label="Dual-arm obstacle-avoidance method">
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_mppi.mp4" data-video-label="Dual-arm obstacle avoidance with MPPI">MPPI</button>
-                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/dualarm_mdob.mp4" data-video-label="Dual-arm obstacle avoidance with MPPI plus MDOB">MPPI + MDOB</button>
+                <button type="button" aria-pressed="true" data-video-source="static/videos/experiments/dualarm_mdob.mp4" data-video-label="Dual-arm obstacle avoidance with MPPI plus SDOB">MPPI + SDOB</button>
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_tubemppi.mp4" data-video-label="Dual-arm obstacle avoidance with Tube-MPPI">Tube-MPPI</button>
                 <button type="button" aria-pressed="false" data-video-source="static/videos/experiments/dualarm_rmppi.mp4" data-video-label="Dual-arm obstacle avoidance with RMPPI">RMPPI</button>
               </div>
+            </div>
+          </article>
+          <article class="hardware-card pointworld-card">
+            <a class="pointworld-media" href="static/images/pointworld-box-lift.png" target="_blank" aria-label="Open PointWorld box-lifting comparisons at full resolution">
+              <img src="static/images/pointworld-box-lift.png" alt="PointWorld box motion predictions and real-robot lifting results without and with SDOB feedback calibration." loading="lazy">
+            </a>
+            <div class="hardware-copy">
+              <p class="experiment-label">PointWorld · Initial feedback calibration</p>
+              <h3>Box lifting with a frozen point-cloud predictor</h3>
+              <p>An initial 50 mm lift provides feedback to fit a task-specific correction to PointWorld predictions. MPPI then plans a 300 mm lift using the calibrated predictor. The selected action sequence executes without replanning or observer updates.</p>
+              <dl class="metric-list">
+                <div><dt>Paired trials</dt><dd>20</dd></div>
+                <div><dt>MPPI final task RMSE</dt><dd>55.26 mm</dd></div>
+                <div><dt>MPPI+SDOB final task RMSE</dt><dd>22.61 mm</dd></div>
+              </dl>
             </div>
           </article>
         </div>
@@ -379,10 +456,10 @@
   <footer class="site-footer">
     <div class="shell footer-layout">
       <div>
-        <strong>MDOB</strong>
-        <p>Modern Disturbance Observers</p>
+        <strong>SDOB</strong>
+        <p>Sampling-Based Disturbance Observer</p>
       </div>
-      <p>Project page maintained by the MDOB authors. Academic page conventions inspired by <a href="https://nerfies.github.io/" target="_blank" rel="noreferrer">Nerfies</a>.</p>
+      <p>Maintained by the SDOB authors. <a href="https://github.com/sampling-based-dob/sampling-based-dob.github.io" target="_blank" rel="noreferrer">Website source</a>. Academic page conventions inspired by <a href="https://nerfies.github.io/" target="_blank" rel="noreferrer">Nerfies</a>.</p>
     </div>
   </footer>
 

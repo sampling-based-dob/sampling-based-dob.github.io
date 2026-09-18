@@ -664,6 +664,14 @@ h3 {
   line-height: 1.5;
 }
 
+.contributions-section {
+  padding-top: 0;
+}
+
+.contribution-list {
+  margin-bottom: 0;
+}
+
 .state-animation {
   padding-top: 0;
 }
@@ -740,7 +748,7 @@ h3 {
 
 .experiment-tabs {
   display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   margin-bottom: 28px;
   padding: 4px;
   background: #102f47;
@@ -797,6 +805,12 @@ h3 {
   height: 100%;
   max-height: 570px;
   object-fit: contain;
+}
+
+.experiment-note {
+  margin: 24px 0 0;
+  color: #b3c3cf;
+  font-size: 0.85rem;
 }
 
 .experiment-copy {
@@ -883,6 +897,34 @@ h3 {
 .hardware-copy > p:last-of-type {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.pointworld-card {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+.pointworld-media {
+  display: block;
+  padding: 24px;
+}
+
+.pointworld-media img {
+  width: 100%;
+}
+
+.pointworld-card .metric-list {
+  border-color: var(--line);
+}
+
+.pointworld-card .metric-list dt {
+  color: var(--muted);
+}
+
+.pointworld-card .metric-list dd {
+  color: var(--navy);
 }
 
 .method-tabs {
@@ -1141,6 +1183,7 @@ h3 {
 
   .channel-grid,
   .hardware-grid,
+  .pointworld-card,
   .state-animation-copy,
   .cost-animation {
     grid-template-columns: 1fr;
