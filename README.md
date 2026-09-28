@@ -1,12 +1,12 @@
 # SDOB Project Website
 
-Project page for **Sampling-Based Disturbance Observer: Compensation of Sim-to-Real Mismatch from Traditional Models to World Models**.
+Project page for **Tackling Sim-to-Real Mismatch in World Models Through A Sampling-Based Disturbance Observer**.
 
 - Website: https://sampling-based-dob.github.io/
 - Website repository: https://github.com/sampling-based-dob/sampling-based-dob.github.io
 - Research code: https://github.com/sampling-based-dob/sampling-based-dob
 
-Content follows the current `2026_sdob/submit_v1.tex` manuscript, including its three contributions, five simulation studies, and three real-robot demonstrations. The paper download is `static/papers/sdob-paper.pdf`.
+Content follows the current `2026_sdob_paper/submit_v1.tex` manuscript, including its three contributions, five simulation studies, and three real-robot demonstrations. The paper download is `static/papers/sdob-paper.pdf`.
 
 ## Local preview
 

@@ -216,12 +216,8 @@ h3 {
 .hero h1 {
   margin-bottom: 15px;
   color: #ffffff;
-  font-size: 4.3rem;
-  line-height: 1.02;
-}
-
-.hero-acronym {
-  color: #8fd3cf;
+  font-size: 3.5rem;
+  line-height: 1.12;
 }
 
 .hero-subtitle {
@@ -1071,7 +1067,7 @@ h3 {
 
 @media (max-width: 1000px) {
   .hero h1 {
-    font-size: 3.8rem;
+    font-size: 3rem;
   }
 
   .hero-subtitle {
@@ -1157,7 +1153,7 @@ h3 {
   }
 
   .hero h1 {
-    font-size: 3.15rem;
+    font-size: 2.6rem;
   }
 
   .hero-subtitle {
@@ -1234,7 +1230,7 @@ h3 {
   }
 
   .hero h1 {
-    font-size: 2.45rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
