@@ -26,6 +26,8 @@ The Code buttons link to the research repository named in the manuscript. The fo
 
 ## Media
 
+Project video: https://www.youtube.com/watch?v=q9bo1TX-A90
+
 Rocket Collect and Visual Landing use the comparison videos `rocket_collect_comparison.mp4` and `landing_comparison.mp4` from `2026_sdob/figure/exp/`, served from `static/videos/` with their result figures as posters.
 
-Overview, control-flow, and experiment figures are exported from the current manuscript assets. Existing demonstration videos retain their original filenames and may show the earlier MDOB name; the project video section explains the naming change. The PointWorld demonstration uses initial feedback calibration followed by a single plan, with no replanning during execution.
+Overview, control-flow, and experiment figures are exported from the current manuscript assets. Existing demonstration videos retain their original filenames and may show the earlier MDOB name. The PointWorld demonstration uses initial feedback calibration followed by a single plan, with no replanning during execution.
