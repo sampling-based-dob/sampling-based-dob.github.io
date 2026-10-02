@@ -177,81 +177,117 @@ h3 {
 
 .hero {
   position: relative;
-  display: flex;
-  min-height: 650px;
-  height: calc(100svh - 88px);
-  max-height: 820px;
-  align-items: center;
-  overflow: hidden;
-  color: #ffffff;
+  color: var(--ink);
+  text-align: center;
+  border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(ellipse at 90% 15%, rgba(37, 117, 129, 0.28), transparent 60%),
-    linear-gradient(135deg, var(--navy-deep), #143b56);
+    radial-gradient(ellipse at 50% 0%, rgba(22, 125, 123, 0.07), transparent 65%),
+    linear-gradient(#ffffff, #f6f8fa);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1040px;
-  padding-block: 72px 78px;
+  max-width: 1080px;
+  padding-block: 76px 68px;
+}
+
+.hero-kicker {
+  margin-bottom: 22px;
+  color: var(--teal);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
 }
 
 .hero h1 {
-  margin-bottom: 15px;
-  color: #ffffff;
-  font-size: 3.5rem;
-  line-height: 1.12;
+  margin-bottom: 24px;
+  color: var(--navy);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1.16;
+  text-wrap: balance;
+}
+
+.hero-title-term {
+  white-space: nowrap;
 }
 
 .hero-subtitle {
-  max-width: 940px;
-  margin-bottom: 28px;
-  color: #ffffff;
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.26;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 .authors {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px 20px;
-  margin-bottom: 7px;
-  color: #f6fbff;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-bottom: 12px;
+  color: var(--navy);
   font-size: 1rem;
   font-weight: 600;
 }
 
 .authors a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid transparent;
 }
 
 .authors a:hover,
 .authors a:focus-visible {
-  color: #9edbd8;
-  border-color: #9edbd8;
+  color: var(--teal);
+  border-color: var(--teal);
 }
 
 .authors sup,
 .affiliations sup {
-  color: #9edbd8;
+  color: var(--teal);
+  margin-left: 2px;
 }
 
 .affiliations {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 20px;
-  max-width: 920px;
-  margin-bottom: 31px;
-  color: #c8d6e1;
-  font-size: 0.84rem;
+  justify-content: center;
+  gap: 5px 20px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero .button {
+  border-radius: 8px;
+}
+
+.hero .button-primary {
+  color: #ffffff;
+  background: var(--navy);
+  box-shadow: 0 4px 12px rgba(8, 36, 58, 0.1);
+}
+
+.hero .button-primary:hover,
+.hero .button-primary:focus-visible {
+  background: #143b56;
+}
+
+.hero .button-secondary {
+  color: var(--navy);
+  background: #ffffff;
+  border-color: var(--line);
+}
+
+.hero .button-secondary:hover,
+.hero .button-secondary:focus-visible {
+  background: #edf5f5;
+  border-color: #9abfbe;
 }
 
 .button {
@@ -1053,10 +1089,6 @@ h3 {
     font-size: 3rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.7rem;
-  }
-
   .signal-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1125,14 +1157,8 @@ h3 {
     margin-top: 4px;
   }
 
-  .hero {
-    min-height: 680px;
-    height: calc(100svh - 78px);
-    max-height: 760px;
-  }
-
   .hero-content {
-    padding-block: 58px 64px;
+    padding-block: 52px;
   }
 
   .hero h1 {
@@ -1140,7 +1166,7 @@ h3 {
   }
 
   .hero-subtitle {
-    font-size: 1.45rem;
+    font-size: 1rem;
   }
 
   .authors {
@@ -1200,16 +1226,11 @@ h3 {
     width: min(calc(100% - 24px), var(--shell));
   }
 
-  .hero {
-    min-height: 720px;
-    height: auto;
-  }
-
   .hero-content {
     width: calc(100% - 24px);
     max-width: calc(100% - 24px);
     min-width: 0;
-    padding-block: 64px;
+    padding-block: 40px;
   }
 
   .hero h1 {
@@ -1218,14 +1239,12 @@ h3 {
 
   .hero-subtitle {
     max-width: 100%;
-    font-size: 1.28rem;
+    font-size: 0.95rem;
     overflow-wrap: break-word;
   }
 
   .authors {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 14px;
+    gap: 8px 18px;
   }
 
   .authors > * {
@@ -1240,8 +1259,14 @@ h3 {
   }
 
   .hero-actions {
-    display: grid;
-    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero .button {
+    width: auto;
+    min-width: 0;
+    padding-inline: 12px;
+    font-size: 0.8rem;
   }
 
   .button {
