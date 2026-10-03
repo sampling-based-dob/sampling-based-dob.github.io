@@ -26,7 +26,7 @@ The Code buttons link to the research repository named in the manuscript. The fo
 
 ## Media
 
-Project video: https://www.youtube.com/watch?v=q9bo1TX-A90
+Project video: https://www.youtube.com/watch?v=ovb4moAlaC8
 
 Rocket Collect and Visual Landing use the comparison videos `rocket_collect_comparison.mp4` and `landing_comparison.mp4` from `2026_sdob/figure/exp/`, served from `static/videos/` with their result figures as posters.
 
