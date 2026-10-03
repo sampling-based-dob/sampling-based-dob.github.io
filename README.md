@@ -1,6 +1,6 @@
 # SDOB Project Website
 
-Project page for **Tackling Sim-to-Real Mismatch in World Models Through A Sampling-Based Disturbance Observer**.
+Project page for **Tackling Sim-to-Real Mismatch Through Sampling-Based Disturbance Observers: From Analytical Models to Learned World Models**.
 
 - Website: https://sampling-based-dob.github.io/
 - Website repository: https://github.com/sampling-based-dob/sampling-based-dob.github.io

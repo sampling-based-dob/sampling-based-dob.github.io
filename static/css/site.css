@@ -203,6 +203,13 @@ h3 {
   display: block;
 }
 
+.hero-title-scope {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.65em;
+  line-height: 1.4;
+}
+
 .hero-title-initial {
   color: #527aab;
 }
